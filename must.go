@@ -7,6 +7,12 @@ import (
 	"golang.org/x/xerrors"
 )
 
+func E2p(err error) {
+	if err != nil {
+		panic(xerrors.Errorf("%w", err))
+	}
+}
+
 func One[R any](r R, err error) R {
 	if err != nil {
 		panic(xerrors.Errorf("%w", err))
